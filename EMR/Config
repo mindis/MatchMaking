@@ -1,0 +1,118 @@
+
+
+
+
+
+
+#Copy S3 data into hadoop file system (IF NEEDED)
+
+hadoop fs -cp s3://nsegmentlogs/*.json /s3data
+
+hadoop fs -ls
+hadoop fs -ls s3data
+
+
+
+
+
+# Set Spark and Python classpaths
+export SPARK_HOME=/usr/lib/spark
+export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.4-src.zip:$PYTHONPATH
+export PYTHONPATH=$SPARK_HOME/python:$SPARK_HOME/python/build:$PYTHONPATH
+export PYTHONPATH=/usr/bin/pyspark:$PYTHONPATH
+
+
+#SPARK MEMORY ISSUES
+
+Error 1:
+
+>>> df1 = sqlContext.read.json("s3://aws-logs-966730287427-us-east-1/eventlogs/")
+
+19/04/22 17:12:17 WARN SharedInMemoryCache: Evicting cached table partition metadata from memory due to size constraints (spark.sql.hive.filesourcePartitionFileCacheSize = 262144000 bytes). This may impact query planning performance.
+
+19/04/22 17:18:12 ERROR TransportRequestHandler: Error sending result RpcResponse{requestId=6207609982860906186, body=NioManagedBuffer{buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]}} to /172.30.2.229:57114; closing connection
+
+java.nio.channels.ClosedChannelException
+
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(...)(Unknown Source)
+
+19/04/22 17:18:12 ERROR TransportRequestHandler: Error sending result RpcResponse{requestId=7266632685960913638, body=NioManagedBuffer{buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]}} to /172.30.2.229:56936; closing connection
+
+java.nio.channels.ClosedChannelException
+
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(...)(Unknown Source)
+
+19/04/22 17:18:12 ERROR TransportRequestHandler: Error sending result RpcResponse{requestId=8603452344689887421, body=NioManagedBuffer{buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]}} to /172.30.2.219:57406; closing connection
+
+java.nio.channels.ClosedChannelException
+
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(...)(Unknown Source)
+
+19/04/22 17:18:12 ERROR TransportRequestHandler: Error sending result RpcResponse{requestId=5738182750748155788, body=NioManagedBuffer{buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]}} to /172.30.2.229:57134; closing connection
+
+java.nio.channels.ClosedChannelException
+
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(...)(Unknown Source)
+
+#
+
+# java.lang.OutOfMemoryError: Java heap space
+
+# -XX:OnOutOfMemoryError="kill -9 %p"
+
+#   Executing /bin/sh -c "kill -9 3003"...
+
+ERROR:root:Exception while sending command.
+
+Traceback (most recent call last):
+
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 985, in send_command
+
+    response = connection.send_command(command)
+
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1164, in send_command
+
+    "Error while receiving", e, proto.ERROR_ON_RECEIVE)
+
+Py4JNetworkError: Error while receiving
+
+Traceback (most recent call last):
+
+  File "<stdin>", line 1, in <module>
+
+  File "/usr/lib/spark/python/pyspark/sql/readwriter.py", line 274, in json
+
+    return self._df(self._jreader.json(self._spark._sc._jvm.PythonUtils.toSeq(path)))
+
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+
+  File "/usr/lib/spark/python/pyspark/sql/utils.py", line 63, in deco
+
+    return f(*a, **kw)
+
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 336, in get_return_value
+
+py4j.protocol.Py4JError: An error occurred while calling o64.json
+
+
+
+
+
+Solutions:
+
+echo $HADOOP_HEAPSIZE
+export HADOOP_HEAPSIZE=4096
+
+/usr/lib/hadoop/libexec/hadoop-config.sh has
+
+# check envvars which might override default args
+if [ "$HADOOP_HEAPSIZE" != "" ]; then
+  #echo "run with heapsize $HADOOP_HEAPSIZE"
+  JAVA_HEAP_MAX="-Xmx""$HADOOP_HEAPSIZE""m"
+  #echo $JAVA_HEAP_MAX
+fi
+
+In EMR you can change the memory setting in /etc/spark/conf/spark-defaults.conf file. f tasks are getting outofmemory means, you should increase your executor memory. Please choose the executor memory based on data size. spark.executor.memory 5120M Incase, driver throws outofmemory error, you can increase the driver memory. spark.driver.memory 5120M
+
+
+
