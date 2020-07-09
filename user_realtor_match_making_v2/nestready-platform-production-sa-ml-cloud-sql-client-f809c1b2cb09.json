@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "nestready-platform-production",
+  "private_key_id": "f809c1b2cb09cb9f4fdaa473acf5bdfcae9f8593",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCnbcxCYoSkDQBd\nV4NRZ5nKrmQO2nThRF9gBExNJjPj/wlUQvs/2+WOPLQju/59U6bEnL11NMcMuguF\nBV108cN+TVUfk3ogii6ZXW1E3bC/9PbxmOXiB5v8ivFf5Iwr1cpXx6aWpnAO7PCR\nmbNwuZiw3r0YSHbPjqMBI6nw/KnJEzE6WZcMUUVIuQjhnrLEBqeARzsOX3h9/nk4\nGJczj6uEZ20aFXyNMw3cE4lg4Bag7R2QfClNWlTuJMqTrPVOtqLWWSQfWx/UiKcz\nuPXLCYnMiMMp8FNqFBZIZuo+p+/UF0MAr4v+38rJeQfx1K8Jz0A1QY9QkKJxcddT\nSLUCZcq7AgMBAAECggEAJqOPuphK3SNE/MWoAB7lHqHNZKIkzCH/0sRbKYjR++GN\nMR1+J1gjq4Y12nNVwW2PNJupm4VxFG5RH0NENKtgvuKw7OcXja/mHi2x/G0fD8XE\nQbBUCSxRYuBb4RH5CVq+5jAksWq6vK8Qu8FZaH/kjZjx0ctTZAYadzZYT024DzeX\nA5/VXdzgiLpNUXGFz866vGcVHNLfwDIU2VLd5vm72eJizgoDje6pBtirIv6DhG8k\nC8w1aeLuKmXt+WuClVkG1JO+7dP+P7ERVpsdqRUgHSPcRqT1XEhauP78zDEmDX4l\nwDQz2EtqK9PLA7wYsLETgKWQm7sJujig6wokfmCFbQKBgQDna9lUBnQGCPaG+ZOZ\nWOsICWk+Lnfy+lNGVjeTKX6F9X0k1oW16/5iwtLY2IF0OHX5YIvIvIPEN/CEOHef\nptOvVrCRT2F1gv8FOggsjsdSe2tlG0nogb5BwMEIsLW1PP/9vQoOYQ5ImH9lt+xe\n47c14sPXSwxegwOJLnCWGsUMFQKBgQC5NgysTxMF9ewPeQtOefOTKCEvOR9cGEQ6\nQ4W++Ycd3QIv82KoV1pqF/Ix2JA4LiTA5jrH91iBtacJVwcgReYlrtsZGFGuHYSj\nlJUzSp2dN2d/Pazs9tiIuFUjYsS3/EOFGpWWdKhyO/pOEZq3XkRzikDUv61AuC9W\nZqtKikefjwKBgQDYZz2fGTm9uvvtU8z2BPQjW8mSYBnCmNruVwk5EABEfD8+B2yZ\npckHyW8pX6wOZg3L2MBeQgplnnnG6pbSMEqbF9Gc0EIuhQS8envSTuGM++R9c3s1\ndL3Y9sqLudLxW812FSQmNhQJRrE7CTZ7tS1Jsne4B3HVn2XbDhYyB25j0QKBgQCH\nCB4DPn+LF/nsaf7RT15Dir1u9YGknliX9gS78KcPIcPne9YRD+budNjyeIblPtcz\nAGgYxH/1yZ+n0phyciPSk4JP8IgUnpbGwJxq0drJ9cvyW+AIwAus2l/QNcFgtn3v\nvCsVj6YD6zCZ3IHlcMgNSN3tfnXtOpvgrWfzJ5AChwKBgQCO7Xpoa0s7/5PbjYOp\nWCD8GvUez2xmzORVAw7HGdTv3TKUkgRsF+3eGoO//3z9NXh0LpeQy3ijurgMlFgp\n2ERZP4Xjcd2z2zLfTcFOC6mLkB+mSucmT1U9m6ymLWL57myoDCZYp93ALqj4+vlL\noCMzKEGCjNesV/1zaKBIwCMjDw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "ml-cloud-sql-client@nestready-platform-production.iam.gserviceaccount.com",
+  "client_id": "100502167014078269498",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ml-cloud-sql-client%40nestready-platform-production.iam.gserviceaccount.com"
+}
