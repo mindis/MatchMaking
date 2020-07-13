@@ -1,4 +1,5 @@
 import os
+os.system('git config user.email "jmalhot@gmail.com"')
 for i in range(9):
     if os.path.exists('output.txt'):
         os.system('rm output.txt')
