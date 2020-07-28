@@ -1,0 +1,180 @@
+
+
+curl -X POST "https://us-central1-nest-ml.cloudfunctions.net/find_realtor_v2" -H "Content-Type:application/json" --data '{"user_id":"nestready","user_key":"b942c5ec-0f97-11ea-9fd7-42010a8a0004","locations":"pike","state":"MS","min_price":95000,"max_price":385000, "min_beds":2, "max_beds":3, "property_type":"townhouse"}'
+
+
+
+Input json format - 
+
+{
+"user_id":"nestready",
+"user_key":"b942c5ec-0f97-11ea-9fd7-42010a8a0004",
+"locations":["new-york"],
+"state":["NY"],
+"min_price":95000,
+"max_price":385000,
+"min_beds":2,
+"max_beds":3,
+"property_type":"townhouse"
+}
+--
+OR
+---
+
+{
+"user_id":"nestready",
+"user_key":"b942c5ec-0f97-11ea-9fd7-42010a8a0004",
+"locations":"new-york",
+"state":"NY",
+"min_price":95000,
+"max_price":385000,
+"min_beds":2,
+"max_beds":3,
+"property_type":"townhouse"
+}
+
+
+
+
+Mandatory parameters:
+user_id, user_key, locations, min_price, max_price
+
+for example -
+{
+"user_id":"nestready",
+"user_key":"b942c5ec-0f97-11ea-9fd7-42010a8a0004",
+"locations":["pike"],
+"min_price":95000,
+"max_price":385000,
+}
+
+
+
+Optional parameters:
+state, min_beds, max_beds, property_type
+
+
+validations:
+
+1. user_id and user_key -->
+user_id and user_key values are authenticated from file 
+https://github.com/navut/nestready_machine_learning/blob/master/user_realtor_match_making_v2/authentication.json
+
+
+
+2. locations -->
+locations must be a string or a list of one city or county. 
+for example -
+
+"locations":["pike"] or  "locations":"pike" 
+
+
+DO NOT PASS locations[""]
+
+3. state -->
+state is optional parameter, and must be a list of two digit state codes as per USPS. for example -
+
+For Colorado, enter "CO"
+"state":["CO"] or "state":"CO"
+
+if state is not known or not required, then do not pass this field as parameter. It is recommended to pass STATE for cities/counties that
+are more then one state for algorithm to return accurate results.
+
+
+4. price range -->
+Must be a number 
+
+5. beds range -->
+
+min_beds and max_beds are optional and must be integers in DOLLARS (not cents) if passed else there will be a message returned 
+
+[{"error_message":"min_beds and max_beds values must be INTEGERS."}]
+
+
+
+6. property type -->
+property_type is an optional parameter and must have one of the following values:
+
+Townhouse, Single Family/Single Family Detached, Apartment, Others, ALL
+
+
+if this parameter is not passed, then algorithm will work like "ALL"
+
+
+
+
+
+
+Response -
+
+
+Valid json response - upto 5 realtors
+
+{
+"agent_office_email":"listing@housepad.com",
+"agent_office_phone":"866-807-9087",
+"agent_phone":"866-807-9087",
+"agent_email":"info@usrealty.com",
+"agent_name":"Derek Morgan",
+"properties_count":119,
+"score":3.1,
+"agent_office":"Usrealty.Com, Llp"
+},
+{
+"agent_office_email":"andy.cook@perch.com",
+"agent_office_phone":"469-458-0489",
+"agent_phone":"469-458-0489",
+"agent_email":"jennifer.roberts@perch.com",
+"agent_name":"Jennifer Roberts",
+"properties_count":12,
+"score":2.2,
+"agent_office":"Perch Realty"
+},
+{
+"agent_office_email":"ginagigliotti@howardhanna.com",
+"agent_office_phone":"716-754-8995",
+"agent_phone":"716-628-1900",
+"agent_email":"michaeljohnson@howardhanna.com",
+"agent_name":"Michael Johnson",
+"properties_count":89,
+"score":2.1,
+"agent_office":"Howard Hanna"
+}
+]
+
+
+Invalid json format response - 
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>400 Bad Request</title>
+<h1>Bad Request</h1>
+<p>The browser (or proxy) sent a request that this server could not understand.</p>
+
+
+
+
+Validation errors response:
+
+
+[{"error_message":"User_Id and (or) User_Key is missing"}]
+
+[{"error_message":"Invalid User_Id and (or) User_Key - Access denied! "}]
+
+[{"error_message":"No realtor found in input location(s). Please try different location(s)"}]
+
+[{"error_message":"min_beds and max_beds values must be INTEGERS."}]
+
+[{"error_message":"Invalid key found in input: property_type1 "}]
+
+[{"error_message":"max_price key is missing in input json ; "}]
+
+
+[{"error_message":"min_price key is missing ; max_price key is missing ; locations key is missing ; "}]
+
+
+Exception location, the algorithm tries to find the closest match even if other criteria's are not matching apple to apple but if location including state does not match,
+the following json is returned.
+
+[{"error_message":"No realtor found in input location(s). Please try different location(s)"}]
+
+
