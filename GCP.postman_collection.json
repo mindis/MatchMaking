@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"user_id\":\"nestready\",\"user_key\":\"b942c5ec-0f97-11ea-9fd7-42010a8a0004\",\"locations\":\"pike\",\"state\":\"MS\",\"min_price\":95000,\"max_price\":385000, \"min_beds\":2, \"max_beds\":3, \"property_type\":\"townhouse\"}",
+					"raw": "{\"user_id\":\"nestready\",\"user_key\":\"b942c5ec-0f97-11ea-9fd7-42010a8a0004\",\"locations\":\"pike\",\"state\":\"MS\",\"min_price\":10000,\"max_price\":385000, \"min_beds\":2, \"max_beds\":3, \"property_type\":\"townhouse\"}",
 					"options": {
 						"raw": {
 							"language": "json"
