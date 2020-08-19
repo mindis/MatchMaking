@@ -1,6 +1,6 @@
 import os
 os.system('git config user.email "jmalhot@gmail.com"')
-for i in range(4):
+for i in range(15):
     if os.path.exists('output.txt'):
         os.system('rm output.txt')
         os.system('git add --all')
