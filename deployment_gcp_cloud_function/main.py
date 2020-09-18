@@ -11,8 +11,7 @@ def load_agents():
     file_name=os.environ.get('file_name', 'file_name environment variable is not set.')
     agents = pd.read_csv(file_name)
     '''
-    #agents = pd.read_csv('gs://nest-agents/quantarium_agents.csv',chunksize=10000)
-    agents = pd.read_csv('gs://nest-agents/quantarium_agents_nestready.csv')
+    agents = pd.read_csv(file_name)
     
     return agents
 
