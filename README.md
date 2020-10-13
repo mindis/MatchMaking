@@ -14,6 +14,7 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 ## Data Science Server/Locally
 
 1. Log in to Data Science Server (54.212.242.95) command line using credentials/SSH or open a Terminal locally
+
 2. Setup Python Virtual Envrionment by running below command:
    
 ```
@@ -40,14 +41,14 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 ```
 
 # Project Execution
-#Run the below command to execute the project
+Run the below command to execute the project
 ```bash
 
    $ nohup python -u ds-sem-service/web_app/run.py &
 
-Note, Project runs on port 3333 and can be acessed using below link:
+   Note, Project runs on port 3333 and can be acessed using below link:
 
-http://54.212.242.95:3333/
+   http://54.212.242.95:3333/
 
 ```
 
@@ -55,7 +56,7 @@ http://54.212.242.95:3333/
 ```bash
   $ ps aux | grep run.py
 
-#Find the PID from the above list and run below command
+# Find the PID from the above list and run below command
   
   $ kill $PID
 ```
