@@ -19,7 +19,8 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
    virtualenv --python=/usr/bin/python3.7 name_of_virtual_env
 
 
-3. Activate Python Virtual Environment setup in above step:
+3. Activate Python Virtual Environment created in above step by running below command:
+
    source name_of_virtual_env/bin/activate
 
 4. Clone the git repository by running below command:
