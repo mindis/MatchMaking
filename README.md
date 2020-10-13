@@ -52,7 +52,7 @@ Run the below command to execute the project
 
 ```
 
-# killing Execution
+# Terminating Process
 ```bash
 Run the below command to find PID
 
