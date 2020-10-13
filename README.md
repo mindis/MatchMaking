@@ -40,7 +40,7 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 
 ```
 
-# Launching interface
+# Launching Interface
 Run the below command to execute the project
 ```bash
 
@@ -52,7 +52,7 @@ Run the below command to execute the project
 
 ```
 
-# Terminating Process
+# Terminating Interface
 ```bash
 Run the below command to find PID
 
@@ -63,7 +63,7 @@ Run the below command to find PID
   $ kill $PID
 ```
 
-# Configurations
+# Mandatory Configurations
 
 In order to properly run this project, the following must be setup.
 
