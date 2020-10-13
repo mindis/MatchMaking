@@ -71,7 +71,7 @@ In order to properly run this project, the following must be setup.
 
 ```bash
 
-   ds-sem-service/resources/config/config.yml must be configured as per below
+   ds-sem-service/resources/config/config.yml must be present and configured as per below
 
    athena:
        s3_staging_dir: s3://aws-athena-query-results-ssense-dataops
@@ -127,6 +127,25 @@ In order to properly run this project, the following must be setup.
    5. Rename the json to client_secrets.json
    
    6. Create settings.yaml file as per below
+      ```
+      client_config_backend: settings
+      client_config:
+      client_id: <CLIENT_ID FROM client_secrets.json>
+      client_secret: <CLIENT_SECRET FROM client_secrets.json>
+
+      save_credentials: True
+      save_credentials_backend: file
+      save_credentials_file: credentials.json
+
+      get_refresh_token: True
+
+      oauth_scope:
+        - https://www.googleapis.com/auth/drive.file
+        - https://www.googleapis.com/auth/drive.install
+        - https://www.googleapis.com/auth/drive
+
+      ```
+      
 
    7. Copy client_secrets.json and  settings.yaml files under ds-sem-service/web_app/
    
