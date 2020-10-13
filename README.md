@@ -44,16 +44,17 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 ```bash
 
    $ nohup python -u ds-sem-service/web_app/run.py &
-```
 
 Note, Project runs on port 3333 and can be acessed using below link:
 
 http://54.212.242.95:3333/
 
-#killing Execution
-```bash
+```
 
+# killing Execution
+```bash
   $ ps aux | grep run.py
+  $ KILL $PID
 ```
 
 
