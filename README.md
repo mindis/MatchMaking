@@ -168,7 +168,7 @@ In order to properly run this project, the following must be setup.
    
    11. credentials.json will be downloaded automatically and used for systematic authentication
    
-   12. Above steps will ensure following files are available under ds-sem-service/web_app/
+   NOTE - All Above steps will ensure following files are available under ds-sem-service/web_app/
    
       [client_secrets.json, settings.yaml, credentials.json]
       
