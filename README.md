@@ -16,7 +16,7 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 1. Log in to Data Science Server (54.212.242.95) command line using credentials/SSH or open a Terminal locally
 2. Setup Python Virtual Envrionment by running below command:
    
-```bash
+```
    $ virtualenv --python=/usr/bin/python3.7 name_of_virtual_env
 ```
 
@@ -27,13 +27,13 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 ```
 
 4. Clone the git repository by running below command:
-   ```bash
+```bash
  
    $ git clone git@github.com:Groupe-Atallah/ds-sem-service.git
 ```
 
 5. Install dependent packages/libraries within virtual environment by running below command:
- ```bash
+```bash
   
    $ python -m pip install -r ds-sem-service/requirements.txt
 
