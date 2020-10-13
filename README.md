@@ -54,9 +54,11 @@ Run the below command to execute the project
 
 # killing Execution
 ```bash
+Run the below command to find PID
+
   $ ps aux | grep run.py
 
-# Find the PID from the above list and run below command
+# Run the below command to terminate the process
   
   $ kill $PID
 ```
