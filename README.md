@@ -16,8 +16,11 @@ Automates SEM Operations Tasks by creating a Self Service Tool (A web page) that
 1. Log in to Data Science Server (54.212.242.95) command line using credentials/SSH or open a Terminal locally
 2. Setup Python Virtual Envrionment by running below command:
    
-   virtualenv --python=/usr/bin/python3.7 name_of_virtual_env
+```bash
+# in terminal, to activate an environment (may omit source in PC)
 
+   virtualenv --python=/usr/bin/python3.7 name_of_virtual_env
+```
 
 3. Activate Python Virtual Environment created in above step by running below command:
 
