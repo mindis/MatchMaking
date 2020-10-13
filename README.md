@@ -104,7 +104,7 @@ In order to properly run this project, the following must be setup.
    ds-sem-service/resources/config/ssense-3c92053ad127.json must be present
 ```
 
-3. Google My Drive Credentials
+3. Configure Google My Drive credentials
 
 
    Steps to Configure Google My Drive Account:
@@ -116,10 +116,15 @@ In order to properly run this project, the following must be setup.
    3. CREATE CREDENTIALS by choosing following
 
       a. OAuth  client ID
+      
       b. Application type - Web Application
+      
       c. Name - <give_any_name>
+      
       d. Authorized JavaScript origin (+ADD URI) - http://localhost:8080
+      
       e. Authorized redirect URIs  - http://localhost:8080/
+      
       f Click SAVE
 
    4. Download JSON
@@ -164,9 +169,8 @@ In order to properly run this project, the following must be setup.
    11. credentials.json will be downloaded automatically and used for systematic authentication
    
    12. Above steps will ensure following files are available under ds-sem-service/web_app/
-      client_secrets.json
-      settings.yaml
-      credentials.json
+   
+      [client_secrets.json, settings.yaml, credentials.json]
       
 
 
