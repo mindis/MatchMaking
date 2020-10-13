@@ -107,11 +107,9 @@ In order to properly run this project, the following must be setup.
 3. Google My Drive Credentials
 
 
-   # Steps to Configure Google My Drive Account:
+   Steps to Configure Google My Drive Account:
 
-   1. Go to https://console.developers.google.com/
-
-   Choose any existing project (i.e. utopian-catfish-599)
+   1. Go to https://console.developers.google.com/ and Choose any existing project (i.e. utopian-catfish-599)
 
    2. Click Credentials 
 
@@ -125,16 +123,31 @@ In order to properly run this project, the following must be setup.
       f Click SAVE
 
    4. Download JSON
+   
    5. Rename the json to client_secrets.json
+   
    6. Create settings.yaml file as per below
 
-   7. place the file in same folder as google_drive_connector.py
-   8. Run google_drive_connector.py (python google_drive_connector.py)
+   7. Copy client_secrets.json and  settings.yaml files under ds-sem-service/web_app/
+   
+   8. Run ds-sem-service/web_app/google_drive_connector.py manually using below command
+      ```
+      $ python google_drive_connector.py
+      ```
+   
    9. A web page will open asking you to login to google account.
+   
    10. A message will appear on sucessfull login "The authentication flow has completed."
-    side note, client_secrets.json is used to authenticate google account so both should match (account used to generate client_secrets.json and account authenticated using web page)
+    
+    Please note that client_secrets.json is used to authenticate google account so use the same account to authenticate web request which was used to generate  client_secrets.json
+   
    11. credentials.json will be downloaded automatically and used for systematic authentication
-
+   
+   12. Above steps will ensure following files are available under ds-sem-service/web_app/
+      client_secrets.json
+      settings.yaml
+      credentials.json
+      
 
 
 
