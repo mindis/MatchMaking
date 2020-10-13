@@ -54,7 +54,10 @@ http://54.212.242.95:3333/
 # killing Execution
 ```bash
   $ ps aux | grep run.py
-  $ KILL $PID
+
+#Find the PID from the above list and run below command
+  
+  $ kill $PID
 ```
 
 
