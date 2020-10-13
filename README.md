@@ -158,7 +158,8 @@ In order to properly run this project, the following must be setup.
    
    10. A message will appear on sucessfull login "The authentication flow has completed."
     
-    Please note that client_secrets.json is used to authenticate google account so use the same account to authenticate web request which was used to generate  client_secrets.json
+    Please note that client_secrets.json is used to authenticate google account so use the same account during web authentication 
+    (account used to create  client_secrets.json
    
    11. credentials.json will be downloaded automatically and used for systematic authentication
    
